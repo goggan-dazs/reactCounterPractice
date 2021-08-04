@@ -1,25 +1,44 @@
 import logo from './logo.svg';
 import './App.css';
+import { Component } from 'react';
+import { render } from '@testing-library/react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(){
+    super();
+    this.state ={
+count:0,
+    }
+  }
+  Archimboldi = () =>{
+    this.setState({
+      count:this.state.count + 1
+    })
+  }
+  Mashburn = () =>{
+    this.setState({
+      count:this.state.count - 1
+    })
+  } 
+   Zero = () =>{
+     this.setState({
+       count:this.state.count = 0
+     })
+   }
+
+
+  render(){
+    return(
+      <div>
+        <h1>My App</h1>
+       <h1>{this.state.count}</h1>
+       <button onClick={this.Archimboldi}>upcount</button>
+       <button onClick={this.Mashburn}>sub1</button>
+       <button onClick={this.Zero}>Zero</button>
+      </div>
+    )
+  }
 }
+
 
 export default App;
